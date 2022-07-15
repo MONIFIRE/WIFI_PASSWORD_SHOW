@@ -23,9 +23,9 @@ def WIFI_PASSWORD(NET, WAN, SHW, PRS):
         results = subprocess.check_output([NET, WAN, SHW, PRS, send, 'key=clear']).decode('utf-8', errors="backslashreplace").split('\n')
         results = [wifi_pass.split(":")[1][1:-1] for wifi_pass in results if "Key Content" in wifi_pass]
         try:
-            print("{:<3} |  {:<}".format(send, results[0]))
+            print("{:<3} :  {:<}".format(send, results[0]))
         except IndexError:
-            print("{:<3} |  {:<}".format(wifi_pass, "None"))
+            print("{:<3} :  {:<}".format(wifi_pass, "None"))
             input("\n\nPress enter to continue...")
 
 IN_PUT = INPUT()
