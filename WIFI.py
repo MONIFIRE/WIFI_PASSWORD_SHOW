@@ -15,7 +15,7 @@ class INPUT():
 ---------------------------------------------------------------------------------------  
 ''')
       print(f"{HOME_PAGE}")
-      input('Press enter to show your wifi password...')
+      input('Press enter to show your wifi password...\n ')
 def WIFI_PASSWORD(NET, WAN, SHW, PRS):
     data = subprocess.check_output([NET, WAN, SHW, PRS]).decode('utf-8', errors="backslashreplace").split('\n')
     profile = [wifi.split(":")[1][1:-1] for wifi in data if "All User Profile" in wifi]
